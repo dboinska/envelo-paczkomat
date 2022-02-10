@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Envelo - odbierz paczkę</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <main class="main">
+      <div class="container">
+        <div class="container__text">
+          <div class="logo">
+            <h1 class="logo__heading">envelo</h1>
+            <span class="logo__subheading">Grupa Poczty Polskiej</span>
+          </div>
+          <p>Możesz mieć swoją przesyłkę w kilkanaście sekund.</p>
+          <p>Rozpocznij klikając w przycisk.</p>
+          <button class="button button__showInputs">Odbierz paczkę</button>
+        </div>
+        <div>
+          <img
+            class="courierImg"
+            src="./images/courier.png"
+            alt="courier photo"
+          />
+        </div>
+      </div>
+    </main>
   </body>
 </html>
