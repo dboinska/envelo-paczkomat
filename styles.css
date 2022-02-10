@@ -96,6 +96,36 @@ body {
   border: var(--redCurvedBorder);
 }
 
+.form__parcel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form__parcel input {
+  padding: 1rem;
+  border-radius: 40px;
+  font-size: 1.2rem;
+}
+
+.form__parcel label {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.form__parcel .parcel__inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.form__parcel .parcel__enterNumber {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto 1rem;
+}
+
 .d-none {
   display: none;
 }

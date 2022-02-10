@@ -18,6 +18,34 @@
           <p>Możesz mieć swoją przesyłkę w kilkanaście sekund.</p>
           <p>Rozpocznij klikając w przycisk.</p>
           <button class="button button__showInputs">Odbierz paczkę</button>
+
+          <form name="parcel" class="form__parcel d-none">
+            <div class="parcel__inputs">
+              <div class="parcel__enterNumber">
+                <label for="phone">Numer telefonu:</label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                  required
+                />
+              </div>
+              <div class="parcel__enterNumber">
+                <label for="parcelKey">Kod odbioru:</label>
+                <input
+                  type="text"
+                  name="parcelKey"
+                  id="parcelKey"
+                  pattern="[0-9]{4}"
+                  required
+                />
+              </div>
+            </div>
+            <button class="button button__submitForm" type="submit">
+              Odbierz paczkę
+            </button>
+          </form>
         </div>
         <div>
           <img
@@ -28,5 +56,6 @@
         </div>
       </div>
     </main>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
