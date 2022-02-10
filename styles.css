@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap');
+
+:root {
+  --gray: gray;
+  --red: red;
+  --white: white;
+  --whiteOpacity: rgba(255, 255, 255, 0.9);
+  --gradient: linear-gradient(
+    180deg,
+    hsl(240deg 1% 56%) 0%,
+    hsl(240deg 1% 61%) 11%,
+    hsl(240deg 1% 65%) 23%,
+    hsl(240deg 1% 69%) 34%,
+    hsl(240deg 1% 74%) 45%,
+    hsl(240deg 1% 79%) 57%,
+    hsl(240deg 1% 83%) 68%,
+    hsl(240deg 1% 88%) 79%,
+    hsl(240deg 1% 93%) 90%,
+    hsl(0deg 0% 97%) 100%
+  );
+  --redCurvedBorder: 2px solid var(--red);
+  --borderRadiusFrame: 50px;
+  --borderRadiusButton: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: var(--gradient);
+  font-family: 'Lato', sans-serif;
+}
+
+.main {
+  padding: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  border: var(--redCurvedBorder);
+  border-radius: var(--borderRadiusFrame);
+  position: relative;
+}
+
+.container__text {
+  text-align: center;
+}
+
+.container {
+  font-size: 1.4rem;
+  padding: 0.6rem;
+}
+
+.logo__heading {
+  color: var(--red);
+  font-size: 5rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.logo__subheading {
+  color: var(--red);
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  display: inline-block;
+  transform: translateY(-25px);
+}
+
+.courierImg {
+  height: 350px;
+}
+
+.button {
+  font-size: 1.2rem;
+  color: var(--white);
+  background-color: var(--red);
+  padding: 1rem;
+  margin: 1.8rem auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: var(--borderRadiusButton);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--red);
+  border: var(--redCurvedBorder);
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .main {
+    padding: 2rem;
+  }
+  .container {
+    font-size: 1.625rem;
+    min-height: auto;
+  }
+
+  .button {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    height: calc(100vh - 4rem);
+  }
+
+  .courierImg {
+    height: 100%;
+  }
+}
