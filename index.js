@@ -68,6 +68,8 @@ function startCountdown(id) {
     REVERSE_COUNTER = 100;
     clearInterval(downloadTimer);
     id.value = 0;
+
+    document.body.classList.remove('overflowHidden');
   }, 3200);
   form.reset();
 }
@@ -83,6 +85,8 @@ function handleSubmit(event) {
     submitFormButton = document.querySelector('.button__submitForm');
 
   if (validateField(clientPhone) && validateField(clientKey)) {
+    document.body.scrollTop = 0;
+    document.body.classList.add('overflowHidden');
     submitFormButton.disabled = true;
     fetchData(Number(clientPhone.value), Number(clientKey.value)).then(
       () => {
