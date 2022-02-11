@@ -82,26 +82,32 @@ function handleSubmit(event) {
     clientKey = document.getElementById('parcelKey'),
     seconds = ((timeEnd - timeStart + BACKEND_TIME) / 1000).toFixed(2),
     timeInfo = document.querySelector('.timeInfo'),
-    submitFormButton = document.querySelector('.button__submitForm');
+    submitFormButton = document.querySelector('.button__submitForm'),
+    spinner = submitFormButton.querySelector('i');
 
   if (validateField(clientPhone) && validateField(clientKey)) {
     window.scrollTo(0, 0);
     document.body.classList.add('overflowHidden');
     submitFormButton.disabled = true;
-    fetchData(Number(clientPhone.value), Number(clientKey.value)).then(
-      () => {
-        sectionPassValidation.classList.remove(D_NONE);
-        startCountdown(progressPassForm);
+    spinner.classList.remove('d-none');
+
+    fetchData(Number(clientPhone.value), Number(clientKey.value))
+      .then(
+        () => {
+          sectionPassValidation.classList.remove(D_NONE);
+          startCountdown(progressPassForm);
+        },
+        error => {
+          sectionFailValidation.querySelector('p').textContent = error;
+          sectionFailValidation.classList.remove(D_NONE);
+          startCountdown(progressFailForm);
+          console.error(error);
+        }
+      )
+      .finally(() => {
+        spinner.classList.add('d-none');
         submitFormButton.disabled = false;
-      },
-      error => {
-        sectionFailValidation.querySelector('p').textContent = error;
-        sectionFailValidation.classList.remove(D_NONE);
-        startCountdown(progressFailForm);
-        submitFormButton.disabled = false;
-        console.error(error);
-      }
-    );
+      });
   }
   timeInfo.textContent = ` ${seconds}`;
 }

@@ -43,8 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
   border: var(--redCurvedBorder);
   border-radius: var(--borderRadiusFrame);
   position: relative;
@@ -193,7 +192,8 @@ body {
   height: 100%;
 }
 
-.d-none {
+.d-none,
+.fa.d-none {
   display: none;
 }
 
