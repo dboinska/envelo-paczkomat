@@ -43,7 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   border: var(--redCurvedBorder);
   border-radius: var(--borderRadiusFrame);
   position: relative;
@@ -75,7 +76,7 @@ body {
 }
 
 .courierImg {
-  height: 350px;
+  height: 300px;
 }
 
 .button {
