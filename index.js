@@ -96,6 +96,7 @@ function resetForm() {
   buttonShowInputs.classList.add(D_NONE);
   form.reset();
   clearTimeout(progressTimeout);
+  document.body.classList.remove('overflowHidden');
 }
 
 buttonShowInputs.addEventListener('click', () => {
