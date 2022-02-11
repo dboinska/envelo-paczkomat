@@ -1,4 +1,4 @@
-export const BACKEND_TIME = 1000;
+const BACKEND_TIME = 1000;
 const ERROR_MESSAGE = 'Nie znaleziono numeru telefonu lub kodu odbioru paczki.';
 
 const data = [

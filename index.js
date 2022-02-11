@@ -1,4 +1,4 @@
-import { fetchData, BACKEND_TIME } from './backend';
+import { fetchData } from './backend';
 
 const buttonShowInputs = document.querySelector('.button__showInputs'),
   form = document.querySelector('.form__parcel'),
@@ -60,7 +60,7 @@ function handleSubmit(event) {
 
   const clientPhone = document.getElementById('phone'),
     clientKey = document.getElementById('parcelKey'),
-    seconds = ((timeEnd - timeStart + BACKEND_TIME) / 1000).toFixed(2),
+    seconds = ((timeEnd - timeStart) / 1000).toFixed(2),
     timeInfo = document.querySelector('.timeInfo'),
     submitFormButton = document.querySelector('.button__submitForm'),
     spinner = submitFormButton.querySelector('i');
