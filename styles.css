@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap');
 
 :root {
-  --gray: gray;
-  --red: red;
-  --white: white;
+  --gray: rgb(128, 128, 128);
+  --red: rgb(255, 0, 0);
+  --white: rgb(255, 255, 255);
+  --blue: rgb(0, 0, 255);
   --whiteOpacity: rgba(255, 255, 255, 0.9);
   --gradient: linear-gradient(
     180deg,
@@ -90,10 +91,40 @@ body {
   transition: all 0.3s ease;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: var(--white);
   color: var(--red);
   border: var(--redCurvedBorder);
+}
+
+.button:focus-visible {
+  outline: 4px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.button:disabled {
+  background-color: var(--gray);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.button__white {
+  background-color: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.button__white:hover,
+.button__white:focus {
+  color: var(--white);
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+.button__white:focus-visible {
+  outline: 4px solid var(--blue);
+  outline-offset: 4px;
 }
 
 .form__parcel {
@@ -106,6 +137,10 @@ body {
   padding: 1rem;
   border-radius: 40px;
   font-size: 1.2rem;
+}
+
+.form__parcel input:invalid {
+  border-color: var(--red);
 }
 
 .form__parcel label {
@@ -126,14 +161,87 @@ body {
   margin: auto 1rem;
 }
 
+.modal {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--whiteOpacity);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  left: 0;
+  border-radius: 50px;
+}
+
+.modal h2 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 1rem;
+  font-family: 'Pacifico', cursive;
+  color: var(--red);
+}
+
+.modal p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.modal__center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
 .d-none {
   display: none;
+}
+
+.parcelImg {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+}
+
+.parcelImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.finalDecision {
+  width: 86%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.timeInfo {
+  color: var(--red);
+  font-family: 'Pacifico', cursive;
+}
+
+.progress {
+  width: 100%;
+  height: 4px;
+  background-color: #efd0d0;
+}
+
+.progress::webkit-progress-value {
+  background-color: var(--red);
+  transition: width 1s ease;
+}
+
+::-moz-progress-bar {
+  background-color: var(--red);
 }
 
 @media screen and (min-width: 800px) {
   .main {
     padding: 2rem;
   }
+
   .container {
     font-size: 1.625rem;
     min-height: auto;
@@ -153,5 +261,13 @@ body {
 
   .courierImg {
     height: 100%;
+  }
+
+  .modal {
+    height: 600px;
+    width: 70%;
+    left: 15%;
+    top: 0;
+    bottom: 0;
   }
 }
