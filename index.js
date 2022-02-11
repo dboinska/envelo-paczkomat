@@ -1,3 +1,5 @@
+import { fetchData, BACKEND_TIME } from './backend';
+
 const buttonShowInputs = document.querySelector('.button__showInputs'),
   form = document.querySelector('.form__parcel'),
   sectionPassValidation = document.querySelector('.passValidation'),
@@ -8,18 +10,12 @@ const buttonShowInputs = document.querySelector('.button__showInputs'),
   progressPassForm = document.getElementById('progressPassForm'),
   progressFailForm = document.getElementById('progressFailForm'),
   TIMEOUT = 2000,
-  BACKEND_TIME = 1000,
   D_NONE = 'd-none';
 
 let timeStart,
   timeEnd,
   progressTimeout,
   REVERSE_COUNTER = 100;
-
-const data = [
-  { accessPhone: 507123098, accessKey: 5643 },
-  { accessPhone: 793793793, accessKey: 2022 },
-];
 
 function hideElement() {
   toggleClass(form, buttonShowInputs, D_NONE);
@@ -32,22 +28,6 @@ function toggleClass(element1, element2, className) {
 
 function takeTime() {
   return new Date().getTime();
-}
-
-function fetchData(phoneNumber, key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const foundNumber = data.find(
-        ({ accessPhone, accessKey }) =>
-          phoneNumber === accessPhone && key === accessKey
-      );
-      if (foundNumber) {
-        resolve(foundNumber);
-      } else {
-        reject('Nie znaleziono numeru telefonu lub kodu odbioru paczki.');
-      }
-    }, BACKEND_TIME);
-  });
 }
 
 function validateField(field) {
