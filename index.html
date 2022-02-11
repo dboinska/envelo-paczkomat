@@ -61,26 +61,28 @@
         </div>
       </div>
       <section class="modal passValidation d-none">
-        <h2>Paczka odebrana!</h2>
-        <div class="parcelImg">
-          <img src="./images/parcel.png" alt="" />
+        <div class="modal__center">
+          <h2>Paczka odebrana!</h2>
+          <div class="parcelImg">
+            <img src="./images/parcel.png" alt="" />
+          </div>
+          <p>
+            Zrobiłeś to w <span class="timeInfo"></span> sekund! Czy możemy
+            zrobić dla Ciebie coś jeszcze?
+          </p>
+          <div class="finalDecision">
+            <button class="button" id="endButton">To wszystko na dziś</button>
+            <button class="button button__white" id="nextParcel__pass">
+              Odbierz kolejną paczkę
+            </button>
+          </div>
+          <progress
+            value="0"
+            max="100"
+            id="progressPassForm"
+            class="progress"
+          ></progress>
         </div>
-        <p>
-          Zrobiłeś to w <span class="timeInfo"></span> sekund! Czy możemy zrobić
-          dla Ciebie coś jeszcze?
-        </p>
-        <div class="finalDecision">
-          <button class="button" id="endButton">To wszystko na dziś</button>
-          <button class="button button__white" id="nextParcel__pass">
-            Odbierz kolejną paczkę
-          </button>
-        </div>
-        <progress
-          value="0"
-          max="100"
-          id="progressPassForm"
-          class="progress"
-        ></progress>
       </section>
       <section class="modal failValidation d-none">
         <div class="modal__center">
