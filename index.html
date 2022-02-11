@@ -19,20 +19,20 @@
           <p>Rozpocznij klikając w przycisk.</p>
           <button class="button button__showInputs">Odbierz paczkę</button>
 
-          <form name="parcel" class="form__parcel d-none">
+          <form name="parcel" class="form__parcel d-none" autocomplete="off">
             <div class="parcel__inputs">
               <div class="parcel__enterNumber">
-                <label for="phone">Numer telefonu:</label>
+                <label for="phone" autocomplete="off">Numer telefonu:</label>
                 <input
                   type="text"
                   name="phone"
                   id="phone"
-                  pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                  pattern="[0-9]{9}"
                   required
                 />
               </div>
               <div class="parcel__enterNumber">
-                <label for="parcelKey">Kod odbioru:</label>
+                <label for="parcelKey" autocomplete="off">Kod odbioru:</label>
                 <input
                   type="text"
                   name="parcelKey"
@@ -55,6 +55,41 @@
           />
         </div>
       </div>
+      <section class="modal passValidation d-none">
+        <h2>Paczka odebrana!</h2>
+        <div class="parcelImg">
+          <img src="./images/parcel.png" alt="" />
+        </div>
+        <p>
+          Zrobiłeś to w <span class="timeInfo"></span> sekund! Czy możemy zrobić
+          dla Ciebie coś jeszcze?
+        </p>
+        <div class="finalDecision">
+          <button class="button" id="endButton">To wszystko na dziś</button>
+          <button class="button button__white" id="nextParcel__pass">
+            Odbierz kolejną paczkę
+          </button>
+        </div>
+        <progress
+          value="0"
+          max="100"
+          id="progressPassForm"
+          class="progress"
+        ></progress>
+      </section>
+      <section class="modal failValidation d-none">
+        <div class="modal__center">
+          <h2>Nie znaleziono paczki!</h2>
+          <p></p>
+          <button class="button" id="nextParcel__fail">Spróbuj ponownie</button>
+          <progress
+            value="0"
+            max="100"
+            id="progressFailForm"
+            class="progress"
+          ></progress>
+        </div>
+      </section>
     </main>
     <script src="./index.js" type="module"></script>
   </body>
