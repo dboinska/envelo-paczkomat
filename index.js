@@ -85,7 +85,7 @@ function handleSubmit(event) {
     submitFormButton = document.querySelector('.button__submitForm');
 
   if (validateField(clientPhone) && validateField(clientKey)) {
-    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
     document.body.classList.add('overflowHidden');
     submitFormButton.disabled = true;
     fetchData(Number(clientPhone.value), Number(clientKey.value)).then(
